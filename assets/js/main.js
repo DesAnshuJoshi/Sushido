@@ -30,7 +30,7 @@ const linkAction = () => {
 navLink.forEach(n => n.addEventListener('click', linkAction))
 
 /*=============== CHANGE BACKGROUND HEADER ===============*/
-const scrollHeader = () => {
+const scrollHeader = () =>{
     const header = document.getElementById('header')
     //When the scroll is greater than 50 viewport height, add the scroll-header class to the header tag
     this.scrollY >= 50 ? header.classList.add('bg-header')
@@ -39,7 +39,13 @@ const scrollHeader = () => {
 window.addEventListener('scroll', scrollHeader)
 
 /*=============== SHOW SCROLL UP ===============*/ 
-
+const scrollUp = () =>{
+    const scrollUp = document.getElementById('scroll-up')
+    //when the scroll is higher than 350 viewport height, add the show scroll class to the a tag with the scrollup\
+    this.scrollY >= 350 ? scrollUp.classList.add('show-scroll')
+                        : scrollUp.classList.remove('show-scroll')
+}
+window.addEventListener('scroll', scrollUp)
 
 /*=============== SCROLL SECTIONS ACTIVE LINK ===============*/
 
