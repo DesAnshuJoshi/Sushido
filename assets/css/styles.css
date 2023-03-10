@@ -1,5 +1,9 @@
 /*=============== GOOGLE FONTS ===============*/
 @import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Lora:wght@500;600&family=Poppins:wght@400;500&display=swap");
+@font-face {
+  font-family: Latikana;
+  src: url("../fonts/latikana.otf") format("opentype");
+}
 
 /*=============== VARIABLES CSS ===============*/
 :root {
@@ -136,7 +140,6 @@ img {
 }
 
 /*=============== HEADER & NAV ===============*/
-
 
 /* Show menu */
 
