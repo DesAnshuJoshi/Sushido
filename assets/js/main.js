@@ -100,3 +100,17 @@ themeButton.addEventListener('click', () =>{
 
 
 /*=============== SCROLL REVEAL ANIMATION ===============*/
+const sr = ScrollReveal({
+    origin: 'top',
+    distance: '60px',
+    duration: 2500,
+    delay: 400,
+    // reset: true 
+})
+
+sr.reveal('.home__img, .newsletter__container')
+sr.reveal('.home__data', {origin: 'bottom'})
+sr.reveal('.about__data, .recently__data', {origin: 'left'})
+sr.reveal('.about__img, .recently__img', {origin: 'right'})
+sr.reveal('.popular__card', {interval: 100})
+sr.reveal('.footer__container, .footer__info, .footer__copy', {origin: 'bottom', })
