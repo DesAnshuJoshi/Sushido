@@ -90,16 +90,63 @@ img {
 }
 
 /*=============== THEME ===============*/
+.nav__buttons{
+  display: flex;
+  align-items: center;
+  column-gap: 1rem;
+}
 
+.change-theme{
+  font-size: 1.25rem;
+  color: var(--title-color);
+  cursor: pointer;
+  transition: color .3s;
+}
 
 /*========== Variables Dark theme ==========*/
-
+body.dark-theme{
+  --first-color: hsl(19, 64%, 58%);
+  --first-color-alt: hsl(19, 64%, 54%);
+  --title-color: hsl(19, 24%, 85%);
+  --text-color: hsl(19, 16%, 65%);
+  --body-color: hsl(19, 12%, 8%);
+  --container-color: hsl(19, 10%, 10%);
+}
 
 /*========== 
     Color changes in some parts of 
     the website, in light theme
 ==========*/
+.dark-theme .bg-header,
+.dark-theme .nav__menu,
+.dark-theme .scrollup{
+  box-shadow: 0 2px 8px hsla(19, 64%, 4%, .5);
+}
 
+.dark-theme .popular__card{
+  box-shadow: 0 8px 20px hsla(19, 64%, 4%, .2);
+}
+
+.dark-theme .newsletter__content{
+  background-color: var(--container-color);
+}
+
+.dark-theme .newsletter__form,
+.dark-theme .newsletter__input{
+  background-color: var(--body-color);
+}
+
+.dark-theme::-webkit-scrollbar{
+  background-color: hsl(19, 8%, 15%);
+}
+
+.dark-theme::-webkit-scrollbar-thumb{
+  background-color: hsl(19, 8%, 25%);
+}
+
+.dark-theme::-webkit-scrollbar-thumb:hover{
+  background-color: hsl(19, 8%, 35%);
+}
 
 /*=============== REUSABLE CSS CLASSES ===============*/
 .container {
@@ -257,7 +304,9 @@ img {
 }
 
 /* Active link */
-
+.active-link{
+  color: var(--first-color);
+}
 
 /*=============== HOME ===============*/
 .home{
@@ -399,6 +448,7 @@ img {
   box-shadow: 0 8px 20px hsla(19, 64%, 48%, .08);
   border-radius: 1rem;
   text-align: center;
+  transition: background .4s;
 }
 
 .popular__img{
@@ -559,6 +609,12 @@ img {
   right: 2rem;
   bottom: -2rem;
   transform: rotate(45deg);
+}
+
+.newsletter__container,
+.newsletter__form,
+.newsletter__input{
+  transition: background .4s;
 }
 
 /*=============== FOOTER ===============*/
@@ -738,9 +794,174 @@ img {
 
 /*=============== BREAKPOINTS ===============*/
 /* For small devices */
+@media screen and (max-width: 340px){
+  .container{
+    margin-inline: 1rem;
+  }
 
+  .section{
+    padding-block: 4rem 1rem;
+  }
+
+  .home__title{
+    font-size: 2rem;
+  }
+
+  .home__leaf-1{
+    top: 5rem;
+  }
+
+  .home__leaf-2{
+    bottom: 8rem;
+  }
+
+  .recently__data-img{
+    right: 0.5rem;
+  }
+
+  .newsletter__content{
+    padding: 6rme 1rem 2rem;
+  }
+
+  .newsletter__form{
+    flex-direction: column;
+    background: none;
+    row-gap: 1rem;
+  }
+
+  .newsletter__input{
+    width: initial;
+    padding: 1rem;
+    border-radius: 4rem;
+  }
+
+  .newsletter__button{
+    justify-content: center;
+  }
+
+  .newsletter__img{
+    top: -6rem;
+  }
+
+  .footer__content{
+    gap: 1.5rem;
+  }
+}
 
 /* For medium devices */
+@media screen and (min-width: 576px){
+  .home__container,
+  .about__container,
+  .recently__container,
+  .newsletter__container{
+    grid-template-columns: .7fr;
+    justify-content: center;
+  }
 
+  .footer__content{
+    grid-template-columns: repeat(3, max-content);
+  }
+}
+
+@media screen and (min-width: 767px){
+  .nav{
+    column-gap: 3rem;
+  }
+
+  .nav__toggle,
+  .nav__close,
+  .nav__img-1,
+  .nav__img-2{
+    display: none;
+  }
+
+  .nav__list{
+    flex-direction: row;
+    column-gap: 3rem;
+  }
+
+  .nav__menu{
+    margin-left: auto;
+  }
+
+  .dark-theme .nav__menu{
+    box-shadow: none;
+  }
+
+  .popular__container{
+    grid-template-columns: repeat(2, 250px);
+  }
+
+  .newsletter__img{
+    top: -2rem;
+    left: -3rem;
+  }
+
+  .newsletter__button{
+    justify-content: center;
+    width: 200px;
+  }
+
+  .newsletter__button:before {
+    content: "Subscribe!";
+    font-size: 1rem;
+  }
+
+  .footer__content{
+    grid-template-columns: repeat(4, max-content);
+  }
+}
 
 /* For large devices */
+@media screen and (min-width: 1024px){
+  .section{
+    padding-block: 7rem 1.5rem;
+  }
+
+  .section__subtitle{
+    margin-bottom: .75rem;
+  }
+
+  .nav{
+    height: calc(var(--header-height) + 1.5rem);
+  }
+
+  .home__container{
+    position: relative;
+    grid-template-columns: 480px 500px;
+    padding-block: 7rem 3rem;
+    margin-left: 3.5rem;
+  }
+
+  .home__data{
+    text-align: initial;
+    order: -1;
+  }
+
+  .home__title img{
+    width: 60px;
+  }
+
+  .home__title div{
+    justify-content: initial;
+    column-gap: 1rem ;
+  }
+
+  .home__description{
+    padding-inline: 0 10rem;
+    font-size: var(--small-font-size);
+  }
+
+  .home__img{
+    width: 600px;
+    position: absolute;
+    top: 5rem;
+    right: -2px;
+  }
+
+  .about__container{
+    grid-template-columns: 450px 360px;
+    align-items: center;
+    column-gap: 7rem;
+  }
+}
