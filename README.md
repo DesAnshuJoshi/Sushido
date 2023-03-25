@@ -10,6 +10,7 @@
 - [Technologies Used](#technologies-used)
 - [Features](#features)
 - [Installation](#installation)
+- [Deployment](#deployment)
 - [Usage](#usage)
 - [Screenshots](#screenshots)
 - [Contributing](#contributing)
